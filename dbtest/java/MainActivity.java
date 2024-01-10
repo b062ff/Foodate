@@ -120,7 +120,9 @@ public class MainActivity extends AppCompatActivity {
         data_set.clear();
         for(int i= 0; i<input_data.size();i++){
             Post pt = input_data.get(i);
-            pt.image = image_load("green");
+            String a = "a_" +String.valueOf(input_data.get(i).store_id)+"_cropped";
+            pt.image = image_load(a);
+            Log.d("mainAct", pt.image.toString());
             data_set.add(pt);
         }
     }
