@@ -6,49 +6,194 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="10dp"
+        android:background="@color/gray1"
         app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="3:4"
+        app:layout_constraintDimensionRatio="10:11"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".5000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".5000">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/back_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <ScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray1"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:visibility="visible">
+
+                    <!-- ここにテキストや他のコンテンツを追加 -->
+
+                    <TextView
+                        android:id="@+id/back_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/gray1"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:text="back_name"
+                        android:textColor="@color/white"
+                        android:textSize="34sp" />
+
+                    <TextView
+                        android:id="@+id/back_hour"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/gray1"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:text="biz_hour"
+                        android:textColor="@color/white"
+                        android:textSize="34sp" />
+
+                    <TextView
+                        android:id="@+id/back_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/gray1"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:text="address"
+                        android:textColor="@color/white"
+                        android:textSize="34sp" />
+
+                    <TextView
+                        android:id="@+id/back_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/gray1"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:text="holiday"
+                        android:textColor="@color/white"
+                        android:textSize="34sp" />
+
+                    <TextView
+                        android:id="@+id/back_url"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/gray1"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:text="url"
+                        android:textColor="@color/white"
+                        android:textSize="34sp" />
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/returnButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/front_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray1"
+            android:visibility="visible">
 
             <ImageView
                 android:id="@+id/image"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/gray1"
                 android:scaleType="centerCrop"
+                android:visibility="visible"
                 app:layout_constraintBottom_toTopOf="@+id/name"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@drawable/a_10000_cropped" />
 
             <TextView
                 android:id="@+id/name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:background="@color/gray1"
                 android:ellipsize="end"
+                android:gravity="center_horizontal"
                 android:maxLines="1"
+                android:padding="10dp"
                 android:text="TextView"
-                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:textSize="48sp"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:text="TEST" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/bottom_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/overlay_black">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/skip_white_120dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/top_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/overlay_black">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/like_white_120dp" />
+        </FrameLayout>
+
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

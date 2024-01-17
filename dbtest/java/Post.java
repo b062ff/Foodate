@@ -52,4 +52,25 @@ public class Post {
 
         return result;
     }
+    public String getName(){
+        return this.store_name;
+    }
+    public String getBiz_hour(){
+        return this.biz_hour;
+    }
+    public int getCategory(){
+        return this.category;
+    }
+    public String getHoliday(){
+        return this.holiday;
+    }
+    public String getAddress(){
+        return this.address;
+    }
+    public String getStore_id(){
+        return this.store_id;
+    }
+    public String getUrl(){
+        return this.url;
+    }
 }
